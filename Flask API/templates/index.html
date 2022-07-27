@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %} Uploads {% endblock title %} {%block
+body %} {% if files | length > 1 %} {% for file in files %} {% if file !=
+'init.png' %}
+<img
+    src="{{url_for('static',
+filename = 'images/'+file)}}"
+/>
+{% endif %} {% endfor %} {% endif %}
+<h1>Routes</h1>
+<ol>
+    <li>/api</li>
+    <li>/add</li>
+    <li>/reset</li>
+    <li>/delete-all-images</li>
+    <li>/upload</li>
+</ol>
+
+{% endblock body %}
